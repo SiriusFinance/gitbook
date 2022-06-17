@@ -43,3 +43,13 @@
 * [OG enrollment program](join-sirius-community/og-enrollment-program.md)
 * [Kickoff rewards program](join-sirius-community/kickoff-rewards-program.md)
 * [Early adopter program](join-sirius-community/early-adopter-program.md)
+
+## Development
+
+* [Smart Contracts](development/smart-contracts/README.md)
+  * [Swap](development/smart-contracts/swap.md)
+  * [Pool](development/smart-contracts/pool.md)
+  * [Farming](development/smart-contracts/farming.md)
+  * [Governance](development/smart-contracts/governance.md)
+  * [Vote](development/smart-contracts/vote.md)
+* [Frontend](development/frontend.md)
