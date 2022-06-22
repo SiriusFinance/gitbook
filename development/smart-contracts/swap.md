@@ -19,12 +19,14 @@ Swap provides functionalities that are used to exchange a token for another rega
 
 View [Sirius on Github](https://github.com/SiriusFinance/siriusfinance-contract)
 
-#### Interfaces
+___
 
-* Swap
+## Interfaces
+
+## Write functions
+
+### **Swap**
 
 ```
-void swap(address tokenA, address tokenB, uint256 amountIn, uint256 amountOut, uint256 deadline);
+void swap(uint8 tokenIndexFrom, uint8 tokenIndexTo, uint256 dx, uint256 minDy, uint256 deadline);
 ```
-
-*

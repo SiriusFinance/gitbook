@@ -17,15 +17,19 @@
 
 View [Sirius on Github](https://github.com/SiriusFinance/siriusfinance-contract)
 
-#### Interfaces
+___
 
-* Deposit
+## Interfaces
+
+## Write functions
+
+### **Deposit**
 
 ```
-void deposit(uint256, address, bool);
+void deposit(uint256 value, address account, bool claimRewards);
 ```
 
-* Withdraw
+### **Withdraw**
 ```
-void withdraw(uint256,bool);
+void withdraw(uint256 value,bool claimRewards);
 ```

@@ -16,3 +16,30 @@
 * oUSD Metapool: 0xD18AbE9bcedeb5A9a65439e604b0BE8db0bdB176
 
 View [Sirius on Github](https://github.com/SiriusFinance/siriusfinance-contract)
+
+___
+
+## Interfaces
+
+## Write functions
+
+### **addLiquidity**
+
+```
+void addLiquidity(uint256[] amounts, uint256 minToMint, uint256 deadline);
+```
+
+### **removeLiquidity**
+```
+void removeLiquidity(uint256 amount, uint256[] minAmounts,uint256 deadline);
+```
+
+### **removeLiquidityImbalance**
+```
+void removeLiquidityImbalance(uint256[] amounts, uint256 maxBurnAmount, uint256 deadline);
+```
+
+### **removeLiquidityOneCoin**
+```
+void removeLiquidityOneCoin(uint256 tokenAmount, uint256 tokenIndex, uint256 minAmount, address receiver);
+```
