@@ -13,32 +13,32 @@ ___
 
 ### calculate APR
 
-1.get farm LpAmount
+* get farm LpAmount
 ```javascript
 LpAmount = LPTokenContract.balanceOf(farmAddress)
 ```
 
-2.get LPToken total totalSupply
+* get LPToken total totalSupply
 ```javascript
 LPTokenTotalSupply = LPTokenContract.balanceOf(farmAddress)
 ```
 
-3.get pool TVL
+* get pool TVL
 ```typescript
 https://graph.sirius.finance/static/volume.json
 ```
 
-4. get LPPrice
+* get LPPrice
 ```typescript
 LPPrice = poolTVL / LPTokenTotalSupply
 ```
 
-5.get farm staked value
+* get farm staked value
 ```typescript
 farmStakedValue = LpAmount * LPPrice
 ```
 
-6.get farm base rewards
+* get farm base rewards
 ```typescript
 function getNearThursday() {
   const str = new Date()
@@ -65,7 +65,7 @@ oneYearRewardValue = srsContract.rate() * 60 * 60 * 24 * 365 * SRS_PRICE * FarmC
 baseRewards = oneYearRewardValue / farmStakedValue
 ```
 
-7.get farm extra rewards
+* get farm extra rewards
 ```typescript
 rewardCount = FarmContract.rewardCount()
 RewardTokensList = FarmContract.getRewardTokensList(
@@ -82,7 +82,7 @@ for (tokenAddress in RewardTokensList) {
 extraRewards = summation all oneTokenextraRewards
 ```
 
-8.get Rewards APR
+* get Rewards APR
 ```typescript
 rewardsAPR = baseRewards + extraRewards
 ```
