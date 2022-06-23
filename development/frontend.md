@@ -48,7 +48,7 @@ baseRewards = oneYearRewardValue / farmStakedValue
 ```
 
 7.get farm extra rewards
-```
+```solidity
 rewardCount = await FarmContract?.rewardCount()
 RewardTokensList = FarmContract?.getRewardTokensList(
     0,
