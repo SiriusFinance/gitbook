@@ -31,15 +31,55 @@ void addLiquidity(uint256[] amounts, uint256 minToMint, uint256 deadline);
 
 ### **removeLiquidity**
 ```
-void removeLiquidity(uint256 amount, uint256[] minAmounts,uint256 deadline);
+removeLiquidity(uint256 amount, uint256[] minAmounts,uint256 deadline);
 ```
 
 ### **removeLiquidityImbalance**
 ```
-void removeLiquidityImbalance(uint256[] amounts, uint256 maxBurnAmount, uint256 deadline);
+removeLiquidityImbalance(uint256[] amounts, uint256 maxBurnAmount, uint256 deadline);
 ```
 
 ### **removeLiquidityOneCoin**
 ```
-void removeLiquidityOneCoin(uint256 tokenAmount, uint256 tokenIndex, uint256 minAmount, address receiver);
+removeLiquidityOneCoin(uint256 tokenAmount, uint256 tokenIndex, uint256 minAmount, address receiver);
+```
+
+## Read functions
+
+### **getA**
+```
+getA() external view returns (uint8 A);
+```
+
+### **getVirtualPrice**
+```
+getVirtualPrice() external view returns (uint8 virtualPrice);
+```
+
+### **getTokenBalance**
+```
+getTokenBalance(uint8 tokenIndex) external view returns (uint8 tokenBalance);
+```
+
+### **getTokenIndex**
+```
+getTokenIndex(string tokenAddress) external view returns (uint8 tokenIndex);
+```
+
+### **paused**
+```
+paused() external view returns (bool isPaused);
+```
+
+### **swapStorage**
+```
+swapStorage() external view returns (
+    uint8 initialA,
+    uint8 futureA,
+    uint8 initialATime,
+    uint8 futureATime,
+    uint8 swapFee,
+    uint8 adminFee,
+    string lpTokenAddress
+);
 ```
