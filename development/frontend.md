@@ -13,33 +13,40 @@ ___
 
 ### calculate APR
 
-* get farm LpAmount
+> Retrieving the farming APR could be complicated, what shows below is not complete runnable code, it's just for showing the logic behind.
+
+1. We first need to retrieve how many LP tokens (eg. 4SRS) the farm is holding by calling the balanceOf method.
 ```javascript
 LpAmount = LPTokenContract.balanceOf(farmAddress)
 ```
 
-* get LPToken total totalSupply
+2. Then retrieve the total supply of the LP token.
 ```javascript
 LPTokenTotalSupply = LPTokenContract.balanceOf(farmAddress)
 ```
 
-* get pool TVL
+3. Call the subgraph API to get the TVL of the corresponding pool.
 ```typescript
 https://graph.sirius.finance/static/volume.json
 ```
 
-* get LPPrice
+4. Get the single LP token price using the TVL divid total supply of the LP token.
 ```typescript
 LPPrice = poolTVL / LPTokenTotalSupply
 ```
 
-* get farm staked value
+5. Retrieve the total staked TVL of the farm.
 ```typescript
 farmStakedValue = LpAmount * LPPrice
 ```
 
-* get farm base rewards
+6. Retrieve the base rewards in SRS.
 ```typescript
+
+// SRS price is fixed to 0.1 at this moment
+const SRS_PRICE = 0.1;
+
+// Sirius' rewards reset at 0:00 UTC every Thursday, so we need to get the nearest time point.
 function getNearThursday() {
   const str = new Date()
   const Today0 = moment(str).utcOffset(0)
@@ -56,33 +63,44 @@ function getNearThursday() {
   const final_time = Today0.subtract(ago, "days").unix()
   return final_time
 }
-nearThursday = getNearThursday()
 
+const nearThursday = getNearThursday()
+
+// srsContract.rate returns of how many SRS is mined per second.
+// so the following formula is to determine how many SRS can be retrieved by the farm for a year.
 oneYearRewardValue = srsContract.rate() * 60 * 60 * 24 * 365 * SRS_PRICE * FarmControllerContract.gaugeRelativeWeight(
     FarmAddress,
     nearThursday,
 )
-baseRewards = oneYearRewardValue / farmStakedValue
+
+// the reward for each dollar.
+const baseRewards = oneYearRewardValue / farmStakedValue
 ```
 
-* get farm extra rewards
+7. Get farm extra rewards. Besides SRS base reward, some farms could provide extra rewards as well such as incentive programs or parntnership programs. please notice that some reareding tokens might also use fixed price.
 ```typescript
-rewardCount = FarmContract.rewardCount()
-RewardTokensList = FarmContract.getRewardTokensList(
+// get all extra reward tokens.
+const rewardCount = FarmContract.rewardCount()
+const rewardTokensList = FarmContract.getRewardTokensList(
     0,
     rewardCount,
 )
 
-for (tokenAddress in RewardTokensList) {
-    secondRate = FarmContract.rewardData(tokenAddress)
+// calculate APR for each token.
+for (tokenAddress in rewardTokensList) {
+    // this token price can be fixed just like SRS, or it needs to be retrieved from external resources. (DEX/CEX/Oracle, etc).
+    const tokenPrice = 0.01; 
+    
+    const secondRate = FarmContract.rewardData(tokenAddress)
     rewardPerYearValue = secondRate.rate * 86400 * 365 * tokenPrice
     oneTokenextraRewards = rewardPerYearValue / farmStakedValue
 }
 
+// finally put them all together.
 extraRewards = summation all oneTokenextraRewards
 ```
 
-* get Rewards APR
+8. Plus the base APR and extra APR together.
 ```typescript
-rewardsAPR = baseRewards + extraRewards
+const rewardsAPR = baseRewards + extraRewards
 ```
