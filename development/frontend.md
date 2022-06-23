@@ -24,22 +24,22 @@ LPTokenTotalSupply = LPTokenContract.balanceOf(farmAddress)
 ```
 
 3.get pool TVL
-```javascript
+```typescript
 https://graph.sirius.finance/static/volume.json
 ```
 
 4. get LPPrice
-```javascript
+```typescript
 LPPrice = poolTVL / LPTokenTotalSupply
 ```
 
 5.get farm staked value
-```javascript
+```typescript
 farmStakedValue = LpAmount * LPPrice
 ```
 
 6.get farm base rewards
-```javascript
+```typescript
 oneYearRewardValue = srsContract?.rate() * 60 * 60 * 24 * 365 * SRS_PRICE * FarmControllerContract?.gaugeRelativeWeight(
     FarmAddress,
     nearThursday,
@@ -48,7 +48,7 @@ baseRewards = oneYearRewardValue / farmStakedValue
 ```
 
 7.get farm extra rewards
-```javascript
+```typescript
 rewardCount = await FarmContract?.rewardCount()
 RewardTokensList = FarmContract?.getRewardTokensList(
     0,
@@ -65,6 +65,6 @@ extraRewards = summation all oneTokenextraRewards
 ```
 
 8.get Rewards APR
-```
+```typescript
 rewardsAPR = baseRewards + extraRewards
 ```
