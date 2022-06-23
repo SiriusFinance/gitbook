@@ -87,17 +87,19 @@ const rewardTokensList = FarmContract.getRewardTokensList(
 )
 
 // calculate APR for each token.
+const extraRewards = 0;
 for (tokenAddress in rewardTokensList) {
     // this token price can be fixed just like SRS, or it needs to be retrieved from external resources. (DEX/CEX/Oracle, etc).
     const tokenPrice = 0.01; 
     
     const secondRate = FarmContract.rewardData(tokenAddress)
-    rewardPerYearValue = secondRate.rate * 86400 * 365 * tokenPrice
-    oneTokenextraRewards = rewardPerYearValue / farmStakedValue
+    const rewardPerYearValue = secondRate.rate * 86400 * 365 * tokenPrice
+    const tokenExtraRewards = rewardPerYearValue / farmStakedValue
+    extraRewards += tokenExtraRewards;
 }
 
-// finally put them all together.
-extraRewards = summation all oneTokenextraRewards
+// here goes the total extra rewards.
+cosole.log(extraRewards);
 ```
 
 8. Plus the base APR and extra APR together.
