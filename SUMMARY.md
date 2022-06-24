@@ -24,13 +24,13 @@
 * [Add Astar Network to yourMetamask](user-guidance/add-astar-network-to-yourmetamask.md)
 * [Add assets to your Metamask](user-guidance/add-assets-to-your-metamask.md)
 * [Create a Polkadot.js wallet](user-guidance/create-a-polkadot.js-wallet.md)
-* [Transfer assets to Astar Network](user-guidance/transfer-assets-to-astar-network.md)
-* [Swap to have the best combo of assets](user-guidance/swap-to-have-the-best-combo-of-assets.md)
-* [Gain 4SRS LP tokens](user-guidance/gain-4srs-lp-tokens.md)
+* [Transfer assets to Astar Network](user-guidance/transfer-assets-to-astar-network.md)
+* [Swap to have the best combo of assets](user-guidance/swap-to-have-the-best-combo-of-assets.md)
+* [Gain 4SRS LP tokens](user-guidance/gain-4srs-lp-tokens.md)
 * [Earn SRS](user-guidance/earn-srs.md)
 * [Join the governance and vote](user-guidance/join-the-governance-and-vote.md)
-* [How to withdraw your assets](user-guidance/how-to-withdraw-your-assets.md)
-* [Why is veSRS worth earning](user-guidance/why-is-vesrs-worth-earning.md)
+* [How to withdraw your assets](user-guidance/how-to-withdraw-your-assets.md)
+* [Why is veSRS worth earning](user-guidance/why-is-vesrs-worth-earning.md)
 
 ## Risks
 
@@ -50,6 +50,4 @@
   * [Swap](development/smart-contracts/swap.md)
   * [Pool](development/smart-contracts/pool.md)
   * [Farming](development/smart-contracts/farming.md)
-  * [Governance](development/smart-contracts/governance.md)
-  * [Vote](development/smart-contracts/vote.md)
 * [Frontend](development/frontend.md)
