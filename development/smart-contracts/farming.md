@@ -17,7 +17,9 @@
 
 View [Sirius on Github](https://github.com/SiriusFinance/siriusfinance-contract)
 
-___
+***
+
+> For showing TVL/APR, please refer to: [https://docs.sirius.finance/development/frontend](https://docs.sirius.finance/development/frontend)
 
 ## Interfaces
 
@@ -30,6 +32,7 @@ void deposit(uint256 value, address account, bool claimRewards);
 ```
 
 ### **Withdraw**
+
 ```
 void withdraw(uint256 value,bool claimRewards);
 ```

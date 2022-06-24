@@ -17,7 +17,11 @@
 
 View [Sirius on Github](https://github.com/SiriusFinance/siriusfinance-contract)
 
-___
+
+
+> For showing TVL/APR, please refer to: [https://docs.sirius.finance/development/frontend](https://docs.sirius.finance/development/frontend)
+
+
 
 ## Interfaces
 
@@ -30,16 +34,19 @@ void addLiquidity(uint256[] amounts, uint256 minToMint, uint256 deadline);
 ```
 
 ### **removeLiquidity**
+
 ```
 removeLiquidity(uint256 amount, uint256[] minAmounts,uint256 deadline);
 ```
 
 ### **removeLiquidityImbalance**
+
 ```
 removeLiquidityImbalance(uint256[] amounts, uint256 maxBurnAmount, uint256 deadline);
 ```
 
 ### **removeLiquidityOneCoin**
+
 ```
 removeLiquidityOneCoin(uint256 tokenAmount, uint256 tokenIndex, uint256 minAmount, address receiver);
 ```
@@ -47,31 +54,37 @@ removeLiquidityOneCoin(uint256 tokenAmount, uint256 tokenIndex, uint256 minAmoun
 ## Read functions
 
 ### **getA**
+
 ```
 getA() external view returns (uint8 A);
 ```
 
 ### **getVirtualPrice**
+
 ```
 getVirtualPrice() external view returns (uint8 virtualPrice);
 ```
 
 ### **getTokenBalance**
+
 ```
 getTokenBalance(uint8 tokenIndex) external view returns (uint8 tokenBalance);
 ```
 
 ### **getTokenIndex**
+
 ```
 getTokenIndex(string tokenAddress) external view returns (uint8 tokenIndex);
 ```
 
 ### **paused**
+
 ```
 paused() external view returns (bool isPaused);
 ```
 
 ### **swapStorage**
+
 ```
 swapStorage() external view returns (
     uint8 initialA,
