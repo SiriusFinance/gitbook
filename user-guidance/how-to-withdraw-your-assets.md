@@ -1,4 +1,4 @@
-# How to withdraw your assets
+# How to withdraw your assets
 
 Start from the state where your assets currently are: Click "Unstake" and confirm the transaction to unstake your LP tokens from Farms:
 
@@ -8,4 +8,4 @@ In the next section, select the assets and percentage you want to withdraw (sele
 
 Click “Withdraw” and confirm the transaction to withdraw your Liquidity from Pools:
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (21).png>)

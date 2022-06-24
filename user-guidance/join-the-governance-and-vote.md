@@ -12,7 +12,7 @@ A 30%-50% penalty is charged if users decide to unlock the SRS in advance which 
 
 To put it simply: if you are a BAI hoarder for whatever reason, surely you will want the 4BAI farm to have the highest APR so that you can make the best out of your BAI by depositing to BAI metapool and staking the 4BAI LP on the 4BAI farm to earn more rewards.
 
-![](<../.gitbook/assets/image (7).png>)
+![](../.gitbook/assets/image.png)
 
 **What is voting power?**
 

@@ -6,43 +6,47 @@
 
 https://graph.sirius.finance/static/volume.json
 
-___
-
+***
 
 ## Farming
 
 ### calculate APR
 
-> Retrieving the farming APR could be complicated, what shows below is not complete runnable code, it's just for showing the logic behind.
+> Retrieving the farming APR could be complicated, what shows below is not complete runnable code, it's just for showing the logic behind it.
 
-1. We first need to retrieve how many LP tokens (eg. 4SRS) the farm is holding by calling the balanceOf method.
+1. We first need to retrieve how many LP tokens (eg. 4SRS) the farm is holding by calling the 'balanceOf' method.
+
 ```javascript
 LpAmount = LPTokenContract.balanceOf(farmAddress)
 ```
 
-2. Then retrieve the total supply of the LP token.
+&#x20; 2\. Then retrieve the total supply of the LP token.
+
 ```javascript
 LPTokenTotalSupply = LPTokenContract.balanceOf(farmAddress)
 ```
 
-3. Call the subgraph API to get the TVL of the corresponding pool.
+&#x20; 3\. Call the subgraph API to get the TVL of the corresponding pool.
+
 ```typescript
 https://graph.sirius.finance/static/volume.json
 ```
 
-4. Get the single LP token price using the TVL divid total supply of the LP token.
+&#x20; 4\. Get the single LP token price using the TVL divid total supply of the LP token.
+
 ```typescript
 LPPrice = poolTVL / LPTokenTotalSupply
 ```
 
-5. Retrieve the total staked TVL of the farm.
+&#x20; 5\. Retrieve the total staked TVL of the farm.
+
 ```typescript
 farmStakedValue = LpAmount * LPPrice
 ```
 
-6. Retrieve the base rewards in SRS.
-```typescript
+&#x20; 6\. Retrieve the base rewards in SRS.
 
+```typescript
 // SRS price is fixed to 0.1 at this moment
 const SRS_PRICE = 0.1;
 
@@ -77,7 +81,8 @@ oneYearRewardValue = srsContract.rate() * 60 * 60 * 24 * 365 * SRS_PRICE * FarmC
 const baseRewards = oneYearRewardValue / farmStakedValue
 ```
 
-7. Get farm extra rewards. Besides SRS base reward, some farms could provide extra rewards as well such as incentive programs or parntnership programs. please notice that some reareding tokens might also use fixed price.
+&#x20; 7\. Get farm extra rewards. Besides SRS base reward, some farms could provide extra rewards as well such as incentive programs or partnership programs. please notice that some rewarding tokens might also use fixed price.
+
 ```typescript
 // get all extra reward tokens.
 const rewardCount = FarmContract.rewardCount()
@@ -102,7 +107,8 @@ for (tokenAddress in rewardTokensList) {
 cosole.log(extraRewards);
 ```
 
-8. Plus the base APR and extra APR together.
+&#x20; 8\. Plus the base APR and extra APR together.
+
 ```typescript
 const rewardsAPR = baseRewards + extraRewards
 ```
