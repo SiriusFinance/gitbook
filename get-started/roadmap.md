@@ -27,11 +27,13 @@ description: 'Official website: https://www.sirius.finance/'
 * Multisig for smart contracts
 * Rewarding dashboard launch (one place to see all rewards)
 * Documentation publish
-* Public fundraise
+
+
 
 ## **Q3 Sirius Ecosystem**
 
 * Launch additional pools
+* Public fundraising（July）
 * Protocols optimization
 * LP Pools creation
 * Website V2 launch
