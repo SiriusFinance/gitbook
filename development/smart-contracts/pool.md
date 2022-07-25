@@ -14,6 +14,7 @@
 * WETH Metapool: 0x2d5Da7c463B3E8f4CF1AF08a1aA0a5DB9BB644F7
 * WBNB Metapool: 0xC9d4f937Fa8e0193b46817a41435a262867ff090
 * oUSD Metapool: 0xD18AbE9bcedeb5A9a65439e604b0BE8db0bdB176
+* nASTR Stablepool: 0xEEa640c27620D7C448AD655B6e3FB94853AC01e3
 
 View [Sirius on Github](https://github.com/SiriusFinance/siriusfinance-contract)
 
